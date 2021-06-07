@@ -20,9 +20,10 @@
     top: 0;
     left: 0;
     width: 50%;
-    background: url('../assets/Skype_Picture_2021_06_07T16_25_53_581Z.jpeg'),url('../assets/Skype_Picture_2021_06_07T16_27_30_872Z.jpeg'), url('../assets/Skype_Picture_2021_06_07T16_27_37_170Z.jpeg');
+    background: url('../assets/Skype_Picture_2021_06_07T16_25_53_581Z.jpeg'),url('../assets/Skype_Picture_2021_06_07T16_27_30_872Z.jpeg'), url('../assets/Skype_Picture_2021_06_07T16_27_37_170Z.jpeg'),url('../assets/NightSky.png');
     background-attachment: fixed;
     width: 100%;
+    /* z-index: 1; */
     background-size: auto,auto,cover;
 }
 .scene,
@@ -66,6 +67,17 @@ canvas {
     left: 50%;
     transform: translate(-50%,-23px);
 }
+p{
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 3.75rem;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
+}
 .navbar button{
     position: absolute;
     bottom: -7.5%;
@@ -86,8 +98,8 @@ canvas {
 .navbar ul{
     list-style: none;
     position: absolute;
-    right: -18.3%;
-    top: 39%;
+    right: -10.8%;
+    top: 28%;
     display: flex;
     transform: rotate(90deg);
     /* position: relative; */
@@ -96,17 +108,17 @@ canvas {
     content: '';
     position: absolute;
     bottom: 50%;
-    right: -25%;
-    width: 25%;
+    right: -108.25%;
+    width: 108.25%;
     height: 2px;
     background: #fff;
 }
 .navbar ul::before{
     content: '';
     position: absolute;
-    top: 54%;
-    left: -10.05%;
-    width: 10.05%;
+    top: 50%;
+    left: -22.5%;
+    width: 22.5%;
     height: 2px;
     background: #fff;
 }
@@ -117,7 +129,7 @@ canvas {
 .navbar ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 1.25rem;
     padding: .75rem;
     display: inline-block;
 }

@@ -7,7 +7,7 @@ let renderer;
 let scene;
 let house;
 let watch;
-let gui = new dat.GUI();
+// let gui = new dat.GUI();
 
 function init() {
   container = document.querySelector(".scene");
@@ -32,9 +32,16 @@ function init() {
   light.position.set(21, -21, 100);
   scene.add(light);
   const light1 = new THREE.DirectionalLight(0x1FE1DC, .5);
-  light1.position.set(0, 0, 100);
+  light1.position.set(45, -10, 50);
   scene.add(light1);
-  guiEffect(light1)
+  
+  const light2 = new THREE.DirectionalLight(0xffffff, .5);
+  light2.position.set(-100, 0, 20);
+  scene.add(light2);
+  const light3 = new THREE.DirectionalLight(0x1FE1DC, .65);
+  light3.position.set(-100, 40, 20);
+  scene.add(light3);
+  // guiEffect(light3)
 
   //Renderer
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -45,7 +52,7 @@ function init() {
 
   //Load Model
   let loader = new THREE.GLTFLoader();
-  loader.load("./model/vr.glb", function(gltf) {
+  loader.load("model/vr.glb", function(gltf) {
     house = gltf.scene.children[0];
     house.position.set(0,45,150)
     scene.add(house)
@@ -86,7 +93,7 @@ window.addEventListener('mousemove', (e) => {
 const section = document.querySelector('.section1')
 function cameraUpdate() {
   this.mouse.position.x += (this.mouse.target.x - this.mouse.position.x) / 12.5;
-  this.mouse.position.y += (this.mouse.target.y - this.mouse.position.y) / 12.5;
+  this.mouse.position.y += (this.mouse.target.y - this.mouse.position.y) / 10;
   let width = (1 +this.mouse.position.x)*ww/2
   let height = -(this.mouse.position.y - 1)*wh/2
   section.style.height = `${height}px`;
@@ -94,6 +101,7 @@ function cameraUpdate() {
 
 
   house.rotation.y = (this.mouse.position.x * .5)-0.2;
+  house.rotation.x = -(this.mouse.position.y * .25)-0.2;
   // watch.rotation.y = (this.mouse.position.x * .5)+4.7;
 
 }
@@ -108,19 +116,19 @@ function onWindowResize() {
 
 window.addEventListener("resize", onWindowResize);
 
-function guiEffect(target) {
+// function guiEffect(target) {
 
-  gui.add(target.position, 'x')
-  gui.add(target.position, 'y')
-  gui.add(target.position, 'z')
-  gui.add(target.rotation, 'x')
-  gui.add(target.rotation, 'y')
-  gui.add(target.rotation, 'z')
+//   gui.add(target.position, 'x')
+//   gui.add(target.position, 'y')
+//   gui.add(target.position, 'z')
+//   gui.add(target.rotation, 'x')
+//   gui.add(target.rotation, 'y')
+//   gui.add(target.rotation, 'z')
 
-}
-function guiColor(target, color) {
-  const coll = { color: color }
-  gui.addColor(coll, 'color').onChange(() => {
-    target.color = coll.color
-  })
-}
+// }
+// function guiColor(target, color) {
+//   const coll = { color: color }
+//   gui.addColor(coll, 'color').onChange(() => {
+//     target.color = coll.color
+//   })
+// }
