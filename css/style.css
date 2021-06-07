@@ -1,0 +1,123 @@
+@font-face {
+    font-family: Font;
+    src: url('../fonts/neuropol\ x\ rg.ttf') format('opentype');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: font, 'sans-serif';
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../assets/NightSky.png');
+    overflow: hidden;
+}
+.container .section1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    background: url('../assets/Skype_Picture_2021_06_07T16_25_53_581Z.jpeg'),url('../assets/Skype_Picture_2021_06_07T16_27_30_872Z.jpeg'), url('../assets/Skype_Picture_2021_06_07T16_27_37_170Z.jpeg');
+    background-attachment: fixed;
+    width: 100%;
+    background-size: auto,auto,cover;
+}
+.scene,
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.navbar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 92.5%;
+    height: 90%;
+    transform: translate(-50%,-50%);
+    border-left: 2px solid #fff;
+    z-index: 100;
+}
+.navbar::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 47%;
+    height: 2px;
+    background: #fff;
+}
+.navbar::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 47%;
+    height: 2px;
+    background: #fff;
+}
+.navbar .logo{
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-23px);
+}
+.navbar button{
+    position: absolute;
+    bottom: -7.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar button span{
+    font-size: 4rem;
+    transform: rotate(90deg);
+    display: block;
+}
+.navbar ul{
+    list-style: none;
+    position: absolute;
+    right: -18.3%;
+    top: 39%;
+    display: flex;
+    transform: rotate(90deg);
+    /* position: relative; */
+}
+.navbar ul::after{
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    right: -25%;
+    width: 25%;
+    height: 2px;
+    background: #fff;
+}
+.navbar ul::before{
+    content: '';
+    position: absolute;
+    top: 54%;
+    left: -10.05%;
+    width: 10.05%;
+    height: 2px;
+    background: #fff;
+}
+
+.navbar ul li{
+    margin: .5rem;
+}
+.navbar ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.5rem;
+    padding: .75rem;
+    display: inline-block;
+}
