@@ -52,7 +52,7 @@ function init() {
 
   //Load Model
   let loader = new THREE.GLTFLoader();
-  loader.load("model/VR.glb", function(gltf) {
+  loader.load("https://mohitkushwah520.github.io/vr/model/VR.glb", function(gltf) {
     house = gltf.scene.children[0];
     house.position.set(0,45,150)
     scene.add(house)
